@@ -1,6 +1,8 @@
-import SearchBar from './components/SearchBar';
-import { Container, Spinner, Row } from 'react-bootstrap';
 import { useState } from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
+import { Container, Spinner, Row } from 'react-bootstrap';
+import SearchBar from './components/SearchBar';
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,10 +24,16 @@ function App() {
       ) : (
         <Container>
           <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
+          <Row>
+            <Routes>
+              <Route>
+                
+              </Route>
+            </Routes>
+          </Row>
         </Container>
 
       )}
-      <SearchBar />
     </div>
   );
 }
