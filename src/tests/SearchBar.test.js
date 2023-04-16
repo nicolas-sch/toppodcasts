@@ -24,6 +24,6 @@ describe('SearchBar component', () => {
     );
     const inputElement = screen.getByPlaceholderText('Search Podcasts...');
     userEvent.type(inputElement, 'React');
-    expect(mockHandleSearch).toHaveBeenCalledTimes(5); // 'React' has 5 characters
+    expect(mockHandleSearch).toHaveBeenCalledTimes(5);
   });
 });

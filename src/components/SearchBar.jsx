@@ -18,4 +18,4 @@ function SearchBar({ handleSearch, searchTerm }) {
   )
 }
 
-export default SearchBar
+export default SearchBar;

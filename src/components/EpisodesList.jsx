@@ -105,7 +105,7 @@ const EpisodesList = () => {
         <Container>
           <Row>
             <Col md={4}>
-              <Card style={{ width: '100%' }}>
+              <Card style={{ width: '100%' }} className="border-primary">
                 <Card.Img variant="top" src={podcast.artworkUrl600} />
                 <Card.Body>
                   <Card.Title>{podcast.trackName}</Card.Title>
@@ -124,7 +124,7 @@ const EpisodesList = () => {
                 Episodes <Badge bg="success">{episodes.length}</Badge>
               </h3>
               {episodesToShow.map((episode, index) => (
-                <Card key={index}>
+                <Card key={index} className="border-primary">
                   <Card.Body>
                     <Card.Title>{episode.title}</Card.Title>
                     <Card.Text>

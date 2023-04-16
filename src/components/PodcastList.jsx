@@ -8,7 +8,7 @@ const PodcastList = ({ podcasts }) => {
     <>
       {podcasts.map((podcast) => (
         <Col key={podcast.trackId} xs={12} sm={6} md={4} lg={3}>
-          <Card key={podcast.trackId} className="mb-4" data-testid="podcast">
+          <Card key={podcast.trackId} className="mb-4 border-primary" data-testid="podcast">
             <Card.Img variant="top" src={podcast.artworkUrl600} alt={podcast.trackName} />
             <Card.Body>
               <Card.Title>{podcast.trackName}</Card.Title>

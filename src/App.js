@@ -5,6 +5,7 @@ import PodcastList from './components/PodcastList';
 import EpisodesList from './components/EpisodesList';
 import SearchBar from './components/SearchBar';
 
+
 const App = () => {
   const [podcasts, setPodcasts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
