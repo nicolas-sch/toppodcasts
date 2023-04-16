@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { Routes, Route, Link } from 'react-router-dom';
-import EpisodeList from './EpisodeList';
+import EpisodesList from './EpisodesList';
 
 const PodcastList = ({ podcasts }) => {
   return (
@@ -17,7 +17,7 @@ const PodcastList = ({ podcasts }) => {
               <Routes>
                 <Route
                   path={`podcast/${podcast.trackId}`}
-                  element={<EpisodeList trackId={podcast.trackId} />}
+                  element={<EpisodesList trackId={podcast.trackId} />}
                 ></Route>
               </Routes>
             </Card.Body>
