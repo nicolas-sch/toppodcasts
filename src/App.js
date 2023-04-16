@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Routes, Route, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { Container, Spinner, Row } from 'react-bootstrap';
-import SearchBar from './components/SearchBar';
+import { Routes, Route, useParams } from 'react-router-dom';
 import PodcastList from './components/PodcastList';
 import EpisodesList from './components/EpisodesList';
+import SearchBar from './components/SearchBar';
 
-function App() {
+const App = () => {
   const [podcasts, setPodcasts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const { trackId } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const podcastListUrl =
     'https://itunes.apple.com/search?term=podcast&country=US&limit=100';
 
@@ -39,7 +39,7 @@ function App() {
   });
 
   return (
-    <div 
+    <div
       className="d-flex justify-content-center align-items-center mt-5"
       style={{ minHeight: '100vh' }}
     >
@@ -52,17 +52,19 @@ function App() {
           <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
           <Row>
             <Routes>
-              <Route>
-                <Route path='*' Component={<PodcastList podcasts={filteredPodcasts} trackId={trackId} />} />
-                <Route path='podcast/:trackId' element={<EpisodesList />} />
-              </Route>
+              <Route
+                path="*"
+                element={
+                  <PodcastList podcasts={filteredPodcasts} trackId={trackId} />
+                }
+              />
+              <Route path="podcast/:trackId" element={<EpisodesList />} />
             </Routes>
           </Row>
         </Container>
-
       )}
     </div>
   );
-}
+};
 
 export default App;
